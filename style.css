@@ -1,69 +1,75 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins";
-}
-body{
-    min-height: 100vh;
-    background: linear-gradient(
-    -135deg,
-    rgb(39,28,243),#ec2f12);
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #1b1b1b;
+  }
+  .container-timer {
+    background-color: #2b2a2a;
+    width: min(75%, 500px);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 4em 2em;
+    border-radius: 0.5em;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .section-container {
     display: flex;
-    align-items: center;
+    gap: 1em;
     justify-content: center;
-}
-
-.conteiner{
+  }
+  .btn {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    background-color: #3e3f43;
+    color: #a9a7a7;
+  }
+  .btn-focus {
+    background-color: #cb202d;
+    color: #ffffff;
+  }
+  .time-btn-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 2em;
+  }
+  #time {
+    text-align: center;
+    color: #ffffff;
+    font-size: 5em;
+    font-weight: 600;
+  }
+  .btn-container {
+    display: flex;
     justify-content: center;
     gap: 2em;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.20);
-    border-radius: 2em;
-    padding: 4em 3em;
-}
-
-.title{
-    font-size: 3em;
-}
-hr{
-    width: 100%;
-    background-color: white;
-    height: 5px;
-    border-radius: 1em;
-    border: none;
-}
-.timer{
-    font-size: 10em;
-    font-weight: 700;
-}
-.button-wraper{
-    display: flex ;
-    gap: 1em;
-}
-button{
-    font-size: 2em;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 0.5em 1.5em;
+  }
+  #btn-start,
+  #btn-pause {
+    padding: 1em 2em;
     border-radius: 0.5em;
-    border: none;
-    color: white;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-button:hover{
-    transform: translateY(-10px);
-}
-#Start{
-    background-color: rgb(86, 230, 14);
-}
-#Stop{
-    background-color: rgb(246, 25, 25);
-}
-#Reset{
-    background-color: rgb(24, 137, 242);
-}
+    background-color: #ffffff;
+  }
+  #btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 2em;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }

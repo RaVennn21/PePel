@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width-device-width,initial-scale=1.0">
-        <title>Pomodoro Timer</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
 
-    <body>
-
-        <div class="conteiner">
-            <h1 class="title">Pomodoro Timer</h1>
-
-            <hr>
-
-            <p class="timer">25:00</p>
-
-            <div class="button_wraper">
-                <button id="Start">Start</button>
-                <button id="Stop">Stop</button>
-                <button id="Reset">Reset</button>
-            </div>
-
-
+    <!-- Pomodoro Timer -->>
+    <div class="container-timer">
+      <div class="section-container">
+        <button id="focus" class="btn btn-timer btn-focus">Focus</button>
+        <button id="shortbreak" class="btn btn-shortbreak">Short Break</button>
+        <button id="longbreak" class="btn btn-longbreak">Long Break</button>
+      </div>
+      <div class="time-btn-container">
+        <span id="time"></span>
+        <div class="btn-container">
+          <button id="btn-start" class="show">Start</button>
+          <button id="btn-pause" class="hide">Pause</button>
+          <button id="btn-reset" class="hide">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
         </div>
-        
-    <script src="app.js"></script>
-    </body>
+      </div>
+    </div>
 
+    <!-- To-Do-List -->>
+
+
+    <!-- Script -->
+    <script src="app.js"></script>
+  </body>
 </html>
