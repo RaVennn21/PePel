@@ -1,3 +1,12 @@
+:root{
+  --primary: #ffffff;
+  --secondary: #101458;
+  --accent1: #45239a;
+  --accent2: #eb3f63;
+  --text: #f7eed8;
+  --icon: #13b070;
+}
+
 /* Pomodoro Timer */
 
 * {
@@ -8,17 +17,17 @@
   }
 
   body {
-    background-color: #E8F5E9;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
   }
 
   .container-timer {
-    background-color: #F9F9F9;
-    width: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 40%;
-    left: 30%;
+    background-color: var(--secondary);
+    width: 70%;
     padding: 2em 1em;
+    margin: 1rem 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
   }
@@ -30,7 +39,7 @@
   }
 
   h1{
-    color: #4CAF50;
+    color: var(--text);
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
@@ -45,14 +54,14 @@
   .btn {
     padding: 1em 2em;
     border-radius: 1em;
-    background-color: #FF6F61;
-    color: #ffffff;
+    background-color: var(--accent2);
+    color: var(--text);
     font-weight: bold;
   }
 
   .btn-focus {
-    background-color: #03A9F4;
-    color: #ffffff;
+    background-color: var(--accent1);
+    color: var(--text);
   }
 
   .time-btn-container {
@@ -66,7 +75,7 @@
     font-weight: bold;
     text-align: center;
     padding: 1rem;
-    color: #4CAF50;
+    color: var(--text);
   }
   
   .timer .minutes,
@@ -87,7 +96,7 @@
     margin-top: 2rem;
     cursor: pointer;
     background-color: transparent;
-    color: #FFC107;
+    color: var(--icon);
     font-size: 2em;
   }
 
@@ -95,7 +104,7 @@
     background-color: transparent;
     border: none;
     outline: none;
-    color: #FFC107;
+    color: var(--icon);
     font-size: 2em;
   }
 
@@ -108,3 +117,12 @@
   }
 
 /* To-do-list */
+
+.container-tdl{
+  background-color: var(--secondary);
+  width: 40%;
+  padding: 2em 1em;
+  margin: 2rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
