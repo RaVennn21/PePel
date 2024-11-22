@@ -1,40 +1,44 @@
+// Pomodoro-Timer
+
 let focusButton = document.getElementById("focus");
 let buttons = document.querySelectorAll(".btn");
-let shortBreakButton = document.getElementById("shortbreak");
-let longBreakButton = document.getElementById("longbreak");
+let breakButton = document.getElementById("break");
 let startBtn = document.getElementById("btn-start");
 let reset = document.getElementById("btn-reset");
 let pause = document.getElementById("btn-pause");
 let time = document.getElementById("time");
+let minutesElement = document.querySelector(".minutes");
+let secondsElement = document.querySelector(".seconds");
+
 let set;
 let active = "focus";
 let count = 59;
 let paused = true;
 let minCount = 24;
-time.textContent = `${minCount + 1}:00`;
 
-const appendZero = (value) => {
-  value = value < 10 ? `0${value}` : value;
-  return value;
+const updateTimeDisplay = () => {
+  minutesElement.textContent = appendZero(minCount);
+  minutesElement.setAttribute("data-minutes", minCount);
+  secondsElement.textContent = appendZero(count);
+  secondsElement.setAttribute("data-seconds", count);
 };
+
+const appendZero = (value) => (value < 10 ? `0${value}` : value);
 
 reset.addEventListener(
   "click",
   (resetTime = () => {
     pauseTimer();
     switch (active) {
-      case "long":
-        minCount = 14;
-        break;
       case "short":
-        minCount = 4;
+        minCount = 5;
         break;
       default:
-        minCount = 24;
+        minCount = 25;
         break;
     }
-    count = 59;
-    time.textContent = `${minCount + 1}:00`;
+    count = 0o0;
+    updateTimeDisplay();
   })
 );
 
@@ -48,29 +52,19 @@ focusButton.addEventListener("click", () => {
   removeFocus();
   focusButton.classList.add("btn-focus");
   pauseTimer();
-  minCount = 24;
-  count = 59;
-  time.textContent = `${minCount + 1}:00`;
+  minCount = 25;
+  count = 0o0;
+  updateTimeDisplay();
 });
 
-shortBreakButton.addEventListener("click", () => {
+breakButton.addEventListener("click", () => {
   active = "short";
   removeFocus();
-  shortBreakButton.classList.add("btn-focus");
+  breakButton.classList.add("btn-focus");
   pauseTimer();
-  minCount = 4;
-  count = 59;
-  time.textContent = `${appendZero(minCount + 1)}:00`;
-});
-
-longBreakButton.addEventListener("click", () => {
-  active = "long";
-  removeFocus();
-  longBreakButton.classList.add("btn-focus");
-  pauseTimer();
-  minCount = 14;
-  count = 59;
-  time.textContent = `${minCount + 1}:00`;
+  minCount = 5;
+  count = 0o0;
+  updateTimeDisplay();
 });
 
 pause.addEventListener(
@@ -87,22 +81,26 @@ pause.addEventListener(
 startBtn.addEventListener("click", () => {
   reset.classList.add("show");
   pause.classList.add("show");
-  startBtn.classList.add("hide");
   startBtn.classList.remove("show");
+  startBtn.classList.add("hide");
   if (paused) {
     paused = false;
-    time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
+    updateTimeDisplay();
     set = setInterval(() => {
       count--;
-      time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
-      if (count == 0) {
-        if (minCount != 0) {
+      if (count < 0) {
+        if (minCount > 0) {
           minCount--;
-          count = 60;
+          count = 59;
         } else {
           clearInterval(set);
         }
       }
+      updateTimeDisplay();
     }, 1000);
   }
 });
+
+
+// To-Do-List
+

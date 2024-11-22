@@ -18,27 +18,39 @@
   </head>
   <body>
 
-    <!-- Pomodoro Timer -->>
+    <!-- Pomodoro Timer -->
     <div class="container-timer">
+      <h1>Pomodoro Timer</h1>
       <div class="section-container">
         <button id="focus" class="btn btn-timer btn-focus">Focus</button>
-        <button id="shortbreak" class="btn btn-shortbreak">Short Break</button>
-        <button id="longbreak" class="btn btn-longbreak">Long Break</button>
+        <button id="break" class="btn btn-break">Break</button>
       </div>
+
       <div class="time-btn-container">
-        <span id="time"></span>
+        <div id="time" class="timer">
+          <span class="minutes" data-minutes="25">25</span>:<span class="seconds" data-seconds="00">00</span>
+        </div>   
+
         <div class="btn-container">
-          <button id="btn-start" class="show">Start</button>
-          <button id="btn-pause" class="hide">Pause</button>
+          <button id="btn-start" class="show">
+            <i class="fa fa-play" aria-hidden="false"></i>
+          </button>
+          <button id="btn-pause" class="hide">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+          </button>
           <button id="btn-reset" class="hide">
             <i class="fa-solid fa-rotate-right"></i>
           </button>
         </div>
+  
       </div>
+
     </div>
 
-    <!-- To-Do-List -->>
+    <!-- To-Do-List -->
+    <div class="container-tdl">
 
+    </div>
 
     <!-- Script -->
     <script src="app.js"></script>

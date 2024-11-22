@@ -1,75 +1,110 @@
+/* Pomodoro Timer */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
+
   body {
-    background-color: #1b1b1b;
+    background-color: #E8F5E9;
   }
+
   .container-timer {
-    background-color: #2b2a2a;
-    width: min(75%, 500px);
+    background-color: #F9F9F9;
+    width: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    padding: 4em 2em;
-    border-radius: 0.5em;
+    top: 40%;
+    left: 30%;
+    padding: 2em 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
   }
+
   button {
     border: none;
     outline: none;
     cursor: pointer;
   }
+
+  h1{
+    color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
   .section-container {
     display: flex;
     gap: 1em;
     justify-content: center;
   }
+
   .btn {
     padding: 1em 2em;
-    border-radius: 0.5em;
-    background-color: #3e3f43;
-    color: #a9a7a7;
+    border-radius: 1em;
+    background-color: #FF6F61;
+    color: #ffffff;
+    font-weight: bold;
   }
+
   .btn-focus {
-    background-color: #cb202d;
+    background-color: #03A9F4;
     color: #ffffff;
   }
+
   .time-btn-container {
     display: flex;
     flex-direction: column;
     margin-top: 2em;
   }
-  #time {
+
+  .timer {
+    font-size: 46px;
+    font-weight: bold;
     text-align: center;
-    color: #ffffff;
-    font-size: 5em;
-    font-weight: 600;
+    padding: 1rem;
+    color: #4CAF50;
   }
+  
+  .timer .minutes,
+  .timer .seconds {
+    display: inline-bock;
+    width: 60px;
+    text-align: right;
+  }
+
   .btn-container {
     display: flex;
     justify-content: center;
     gap: 2em;
   }
+
   #btn-start,
   #btn-pause {
-    padding: 1em 2em;
-    border-radius: 0.5em;
+    margin-top: 2rem;
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: transparent;
+    color: #FFC107;
+    font-size: 2em;
   }
+
   #btn-reset {
     background-color: transparent;
     border: none;
     outline: none;
-    color: #ffffff;
+    color: #FFC107;
     font-size: 2em;
   }
+
   .hide {
     display: none;
   }
+
   .show {
     display: block;
   }
+
+/* To-do-list */
