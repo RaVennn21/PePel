@@ -100,7 +100,3 @@ startBtn.addEventListener("click", () => {
     }, 1000);
   }
 });
-
-
-// To-Do-List
-

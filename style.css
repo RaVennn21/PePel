@@ -101,6 +101,7 @@
   }
 
   #btn-reset {
+    margin-top: 2rem;
     background-color: transparent;
     border: none;
     outline: none;
@@ -131,6 +132,13 @@
   border-radius: 12px;
 }
 
+.container-tdl2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 #todo-input{
   box-sizing: border-box;
   width: 100%;
@@ -138,7 +146,7 @@
   border: 2px, solid var(--accent1);
   border-radius: 10000px;
   font: inherit;
-  color: var(--text);
+  color: #000000;
   caret-color: var(--accent1);
 }
 
@@ -168,16 +176,46 @@ form{
 .todo{
   width: 100%;
   margin-bottom: 10px;
-  padding: 0 30px;
+  padding: 0 10px;
   background-color: var(--accent1);
   color: var(--text);
   border-radius: 15px;
   display: flex;
   align-items: center;
-  ;
 }
 
 .todo .todo-txt{
   padding: 10px;
   padding-right: 0;
+  transition: 250ms ease;
+}
+
+.custom-checkbox{
+  border: 2px solid var(--icon);
+  border-radius: 50%;
+  min-height: 10px;
+  min-width: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: 250ms ease;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+  background-color: var(--icon);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+  fill: #000000;
+}
+
+input[type="checkbox"]:checked ~ .todo-txt{
+  text-decoration: line-through;
+  color: #808080;
+}
+
+input[type="checkbox"]{
+  display: none;
 }

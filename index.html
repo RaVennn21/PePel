@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro Timer</title>
     <!-- Font Awesome Icons -->
@@ -15,6 +14,9 @@
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Script 1 -->
+    <script src="todo.js"></script>
   </head>
   <body>
 
@@ -50,27 +52,22 @@
     <!-- To-Do-List -->
     <div class="container-tdl">
       <h1>To-Do List</h1>
-      <form>
-        <input type="text" id="todo-input"
-        placeholder="Add Your Task" autocomplete="off">
-        <button id="add-btn">ADD</button>
-      </form>
+      <div class="container-tdl2">
+        <form>
+          <input type="text" id="todo-input"
+          placeholder="Add Your Task" autocomplete="off">
+          <button id="add-btn">ADD</button>
+        </form>
 
-      <ul id="todo-list">
-        <li class="todo">
-          <input type="checkbox" id="todo-1">
-          <label for="todo-1" class="custom-checkbox">
-            <i class="fa fa-check" aria-hidden="true"></i>
-          </label>
-          <label for="" class="todo-txt">
-            icikiwi wir 
-          </label>
-        </li>
-      </ul>
-
+        <ul id="todo-list">
+          <li class="todo">
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Script -->
-    <script src="app.js"></script>
+    <!-- Script 2 -->
+    <script src="pomodoro.js"></script>
+
   </body>
 </html>
