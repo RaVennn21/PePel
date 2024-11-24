@@ -181,11 +181,13 @@ form{
   color: var(--text);
   border-radius: 15px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .todo .todo-txt{
   padding: 10px;
+  flex-grow: 1;
   padding-right: 0;
   transition: 250ms ease;
 }
@@ -218,4 +220,20 @@ input[type="checkbox"]:checked ~ .todo-txt{
 
 input[type="checkbox"]{
   display: none;
+}
+.delete-button {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-button svg {
+  transition: 200ms ease;
+}
+
+.delete-button:hover svg {
+  fill: #ff0033;
 }
